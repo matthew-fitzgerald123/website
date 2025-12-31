@@ -232,88 +232,96 @@
         </div>
 
         
-        <!-- Projects Section -->
 <section id="projects" class="bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 shadow-lg rounded-lg p-8 transition duration-500 ease-in-out opacity-0 transform translate-y-5 transition-all duration-1000 ease-in-out" data-aos="fade-up">
-    <h2 class="text-4xl font-bold text-black dark:text-white mb-4">Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Project Card: Playing Card Machine Learning Model -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Playing Card ML Model</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/cards.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Trained and created a machine learning model that recognizes playing cards.</p>
-    </div>
-    <a href="https://github.com/matthew-fitzgerald123/playing_cards_machine_learning" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
+  <h2 class="text-4xl font-bold text-black dark:text-white mb-4">Projects</h2>
 
-<!-- Project Card: Turtle Machine Learning Model -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Turtle ML Model</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/turtles.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Trained and created a machine learning model that recognizes turtles.</p>
-    </div>
-    <a href="https://github.com/matthew-fitzgerald123/turtles_machine_learning" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<!-- Project Card: System Metrics Pipeline -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
+    <!-- Playing Card ML Model -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Playing Card Recognition</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/cards.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Image recognition system that identifies playing cards in real time and exposes predictions through a simple inference interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/playing_cards_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
+
+    <!-- Turtle ML Model -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Wildlife Recognition Model</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/turtles.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Deployed image classification model for identifying wildlife images with a clean demo interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/turtles_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
+
+    <!-- System Metrics Pipeline -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
         <h3 class="text-2xl font-bold text-black dark:text-white">System Metrics Pipeline</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/metrics.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/metrics.mp4" type="video/mp4">
         </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Created a set of scripts that establishes a pipeline providing live system metrics like CPU and memory usage.</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Backend service that collects and exposes live CPU and memory metrics through an API and monitoring dashboard.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/system_metrics_pipeline" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
-    <a href="https://github.com/matthew-fitzgerald123/system_metrics_pipeline" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
 
-<!-- Project Card: United Offers Scraper -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">United Offers Scraper</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/offers.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+    <!-- United Offers Scraper -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Travel Offers Scraper</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/offers.mp4" type="video/mp4">
         </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Created a script that successfully scrapes offers and limited-time promotions from the United Airlines website.</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Data ingestion tool that continuously collects airline promotions and exposes structured results for downstream systems.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/united_offers_scraper" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
-    <a href="https://github.com/matthew-fitzgerald123/united_offers_scraper" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
 
-<!-- Project Card: Stock Price CI/CD Application -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Stock Price CI/CD Application</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/stocks.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+    <!-- Stock Price Application -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Stock Price Tracker</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/stocks.mp4" type="video/mp4">
         </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Created an application that makes use of Heroku and a stock price API to provide live stock prices.</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Full-stack application that fetches real-time stock data and displays price changes through a simple web interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/stock_pipeline_project" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
-    <a href="https://github.com/matthew-fitzgerald123/stock_pipeline_project" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
 
-<!-- Project Card: Recipe Web App -->
-<div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-6 shadow-lg rounded-lg hover:shadow-2xl transition flex flex-col justify-between" data-aos="zoom-in">
-    <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Recipe Web App</h3>
-        <video class="w-full h-64 md:h-48 lg:h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-            <source src="public/videos/recipe.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+    <!-- Recipe Web App -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Recipe Finder Web App</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/recipe.mp4" type="video/mp4">
         </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">Created a web app that allows users to input ingredients and receive relevant recipes.</p>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Full-stack web app that allows users to submit ingredients and receive dynamically ranked recipes through a clean UI.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/recipeWebApp" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
-    <a href="https://github.com/matthew-fitzgerald123/recipeWebApp" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-</div>
+
+  </div>
 </section>
 
     </main>
