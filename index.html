@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Matthew Fitzgerald</title>
     <link href="dist/output.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- AOS Library for Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="./output.css" rel="stylesheet">
+    <!-- Favicon for Light Mode -->
     <link rel="icon" href="light-mode-icon.png" type="image/png" media="(prefers-color-scheme: light)">
+    <!-- Favicon for Dark Mode -->
     <link rel="icon" href="dark-mode-icon.png" type="image/png" media="(prefers-color-scheme: dark)">
     <style>
+        /* CSS to account for safe area insets */
         body {
-            font-family: 'Inter', sans-serif;
             padding-top: env(safe-area-inset-top);
             padding-right: env(safe-area-inset-right);
             padding-bottom: env(safe-area-inset-bottom);
@@ -33,193 +38,10 @@
             padding-right: env(safe-area-inset-right);
         }
 
+        /* Add padding to buttons to account for safe area */
         .button {
             margin-left: env(safe-area-inset-left);
             margin-right: env(safe-area-inset-right);
-        }
-
-        /* Video overlay for contrast */
-        .video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 100%);
-            z-index: 0;
-        }
-
-        /* Glassmorphism cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 1rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        }
-
-        .dark .glass-card {
-            background: rgba(15, 15, 20, 0.82);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .dark .hero-card {
-            background: rgba(12, 12, 18, 0.88);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        /* Skill tags */
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.3rem 0.85rem;
-            border-radius: 9999px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.01em;
-            background: rgba(59, 130, 246, 0.08);
-            color: #1d4ed8;
-            border: 1px solid rgba(59, 130, 246, 0.18);
-            transition: all 0.15s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(59, 130, 246, 0.14);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .dark .skill-tag {
-            background: rgba(96, 165, 250, 0.1);
-            color: #93c5fd;
-            border: 1px solid rgba(96, 165, 250, 0.2);
-        }
-
-        .dark .skill-tag:hover {
-            background: rgba(96, 165, 250, 0.18);
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #3b82f6, rgba(59, 130, 246, 0.08));
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2.25rem;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1.85rem;
-            top: 0.45rem;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px #3b82f6;
-        }
-
-        .dark .timeline-item::before {
-            border-color: #0c0c12;
-        }
-
-        .timeline-role {
-            font-size: 0.975rem;
-            font-weight: 700;
-            color: #111827;
-            line-height: 1.4;
-        }
-
-        .dark .timeline-role {
-            color: #f9fafb;
-        }
-
-        .timeline-company {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #3b82f6;
-            margin-top: 0.1rem;
-        }
-
-        .dark .timeline-company {
-            color: #60a5fa;
-        }
-
-        .timeline-dates {
-            font-size: 0.78rem;
-            color: #6b7280;
-            margin-top: 0.1rem;
-            font-weight: 500;
-        }
-
-        .dark .timeline-dates {
-            color: #9ca3af;
-        }
-
-        .timeline-bullets {
-            margin-top: 0.6rem;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .timeline-bullets li {
-            position: relative;
-            padding-left: 1rem;
-            margin-bottom: 0.3rem;
-            font-size: 0.875rem;
-            color: #374151;
-            line-height: 1.55;
-        }
-
-        .dark .timeline-bullets li {
-            color: #d1d5db;
-        }
-
-        .timeline-bullets li::before {
-            content: '–';
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-weight: 600;
-        }
-
-        /* Section label */
-        .section-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #9ca3af;
-            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -231,28 +53,30 @@
         <source src="public/videos/hero-background.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
-    <div class="video-overlay"></div>
 
-<!-- Hero Section -->
+<!-- Hero Section with Title Box -->
 <div id="hero" class="relative flex flex-col items-center justify-center text-center min-h-screen z-10">
-  <div class="hero-card p-10 transition-colors duration-500 max-w-2xl w-full mx-4" data-aos="fade-down">
-    <h1 class="text-5xl font-extrabold text-black dark:text-dark-text tracking-tight">Matthew Fitzgerald</h1>
+  <div class="bg-white dark:bg-dark-bg bg-opacity-90 p-10 rounded-lg transition-colors duration-500" data-aos="fade-down">
+    <h1 class="text-5xl font-bold text-black dark:text-dark-text">Matthew Fitzgerald</h1>
 
-    <p class="text-xl font-semibold text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">
-      ML Infrastructure Engineer &nbsp;·&nbsp; MLOps &amp; Platform Engineering &nbsp;·&nbsp; Cloud-Native Distributed Systems
+    <p class="text-2xl text-gray-800 dark:text-dark-text mt-4">
+      ML Infrastructure Engineer | MLOps & Platform Engineering | Cloud-Native Distributed Systems
     </p>
 
-    <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
-      <em>Building the infrastructure that makes ML systems reliable, scalable, and production-ready.</em>
-    </p>
+    <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">
+  <em>Building the infrastructure that makes ML systems reliable, scalable, and production-ready.</em>
+</p>
 
-    <div class="flex justify-center mt-6 gap-3 button flex-wrap">
+    <div class="flex justify-center mt-6 button">
+      <!-- LinkedIn Button -->
       <a href="https://www.linkedin.com/in/matthew-f-552048178/" target="_blank" rel="noopener noreferrer"
-         class="text-white bg-blue-600 hover:bg-blue-700 py-2.5 px-6 rounded-full flex items-center transition text-sm font-semibold shadow-sm">
+         class="text-white bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded-full flex items-center mr-4 transition text-base">
         <i class="fab fa-linkedin mr-2"></i> LinkedIn
       </a>
+
+      <!-- GitHub Button -->
       <a href="https://github.com/matthew-fitzgerald123" target="_blank" rel="noopener noreferrer"
-         class="text-white bg-gray-800 hover:bg-gray-900 py-2.5 px-6 rounded-full flex items-center transition text-sm font-semibold shadow-sm">
+         class="text-white bg-gray-800 hover:bg-gray-900 py-3 px-6 rounded-full flex items-center transition text-base">
         <i class="fab fa-github mr-2"></i> GitHub
       </a>
     </div>
@@ -261,307 +85,244 @@
 
 
 <!-- Resume Section -->
-<section id="resume" class="container mx-auto glass-card p-8 max-w-screen-lg transition duration-500 ease-in-out" data-aos="fade-up">
-    <div class="leading-relaxed text-gray-900 dark:text-gray-300">
-
-        <!-- Education -->
-        <div style="margin-bottom: 2.5rem;">
-            <p class="section-label">Education</p>
-            <p class="font-bold text-black dark:text-white text-lg">Florida Tech</p>
-            <p class="text-gray-600 dark:text-gray-400 text-sm mt-0.5">B.S. in Computer Science &nbsp;·&nbsp; 2021 – 2024</p>
+<section id="resume" class="container mx-auto bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 shadow-lg rounded-lg p-6 max-w-screen-lg transition duration-500 ease-in-out" data-aos="fade-up">
+    <div class="text-lg leading-relaxed text-gray-900 dark:text-gray-300 px-4">
+        <!-- Education Section -->
+        <div style="margin-bottom: 2rem;">
+            <h3 class="text-2xl font-semibold text-black dark:text-white mb-4">Education</h3>
+            <p><strong>Florida Tech</strong> - B.S. in Computer Science, 2021-2024</p>
         </div>
-
-        <!-- Work Experience -->
+        <!-- Work Experience Section -->
         <div>
-            <p class="section-label">Work Experience</p>
-            <div class="timeline">
+            <h3 class="text-2xl font-semibold text-black dark:text-white mb-4">Work Experience</h3>
 
-                <!-- CNS -->
-                <div class="timeline-item">
-                    <p class="timeline-role">Software Engineer – ML Infrastructure &amp; Distributed Systems</p>
-                    <p class="timeline-company">Cognitive Network Solutions</p>
-                    <p class="timeline-dates">February 2025 – November 2025</p>
-                    <ul class="timeline-bullets">
-                        <li>Built Kubernetes-based ML workload infrastructure for model deployment and serving on GCP and Azure</li>
-                        <li>Implemented MLflow experiment tracking and model registry, enabling data scientists to ship models without managing deployment complexity</li>
-                        <li>Designed Kafka-driven real-time data pipelines feeding ML systems at scale</li>
-                        <li>Provisioned and managed cloud infrastructure with Terraform; built production observability with Prometheus and Grafana</li>
-                        <li>Built FastAPI and Flask services exposing model inference to enterprise stakeholders</li>
-                    </ul>
-                </div>
+            <div style="margin-bottom: 1.5rem;">
+                <p><strong>Software Engineer – ML Infrastructure & Distributed Systems at Cognitive Network Solutions</strong> - February 2025 - November 2025</p>
+                <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc; font-size: 0.95rem;">
+                    <li>Built Kubernetes-based ML workload infrastructure for model deployment and serving on GCP and Azure</li>
+                    <li>Implemented MLflow experiment tracking and model registry, enabling data scientists to ship models without managing deployment complexity</li>
+                    <li>Designed Kafka-driven real-time data pipelines feeding ML systems at scale</li>
+                    <li>Provisioned and managed cloud infrastructure with Terraform; built production observability with Prometheus and Grafana</li>
+                    <li>Built FastAPI and Flask services exposing model inference to enterprise stakeholders</li>
+                </ul>
+            </div>
 
-                <!-- EarthCam -->
-                <div class="timeline-item">
-                    <p class="timeline-role">Junior Software Engineer</p>
-                    <p class="timeline-company">EarthCam</p>
-                    <p class="timeline-dates">February 2026 – May 2026</p>
-                    <ul class="timeline-bullets">
-                        <li>Optimized a core customer-facing component from the ground up, achieving a 3–5x improvement in load time</li>
-                        <li>Integrated data querying APIs across the full application, improving data resolution and reducing fetch overhead</li>
-                        <li>Delivered new pages and feature work across the stack in TypeScript and Node.js</li>
-                    </ul>
-                </div>
+            <div style="margin-bottom: 1.5rem;">
+                <p><strong>Junior Software Engineer at EarthCam</strong> - February 2026 - May 2026</p>
+                <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc; font-size: 0.95rem;">
+                    <li>Optimized a core customer-facing component from the ground up, achieving a 3–5x improvement in load time</li>
+                    <li>Integrated data querying APIs across the full application, improving data resolution and reducing fetch overhead</li>
+                    <li>Delivered new pages and feature work across the stack in TypeScript and Node.js</li>
+                </ul>
+            </div>
 
-                <!-- Dfinitiv -->
-                <div class="timeline-item">
-                    <p class="timeline-role">Software Engineer, Intern</p>
-                    <p class="timeline-company">Dfinitiv.io</p>
-                    <p class="timeline-dates">Summer 2023, 2024</p>
-                    <ul class="timeline-bullets">
-                        <li>Built AWS-native backend services in Python to automate media curation workflows</li>
-                        <li>Reduced manual processing overhead by over 60% through pipeline automation</li>
-                    </ul>
-                </div>
-
+            <div>
+                <p><strong>Software Engineer, Intern at Dfinitiv.io</strong> - Summer 2023, 2024</p>
+                <ul style="margin-top: 0.5rem; padding-left: 1.5rem; list-style: disc; font-size: 0.95rem;">
+                    <li>Built AWS-native backend services in Python to automate media curation workflows</li>
+                    <li>Reduced manual processing overhead by over 60% through pipeline automation</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
     <!-- Main Content -->
-    <main class="container mx-auto p-6 space-y-10 z-10 relative">
-
-        <!-- About Me and Skills -->
+    <main class="container mx-auto p-6 space-y-16 z-10 relative">
+        <!-- About Me and Skills Section -->
         <div id="content-sections" class="flex flex-col md:flex-row md:justify-between space-y-8 md:space-y-0 md:space-x-8 opacity-0 transform translate-y-5 transition-all duration-1000 ease-in-out" data-aos="fade-up">
+            <!-- About Me Section -->
+        <section id="about" class="flex-1 bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 shadow-lg rounded-lg p-8 transition duration-500 ease-in-out">
+            <h2 class="text-4xl font-bold text-black dark:text-white mb-4">About Me</h2>
+<article class="space-y-4 text-lg leading-relaxed text-gray-900 dark:text-gray-300">
+  <p>
+    I'm an ML Infrastructure Engineer focused on building the platform-layer systems that make machine learning workflows production-ready and scalable.
+    At Cognitive Network Solutions, I built infrastructure for model deployment and serving, covering Kubernetes-based workloads, MLflow experiment tracking and model registry, and Kafka-driven data pipelines feeding ML systems in real time.
+  </p>
 
-            <!-- About Me -->
-            <section id="about" class="flex-1 glass-card p-8 transition duration-500 ease-in-out">
-                <h2 class="text-3xl font-bold text-black dark:text-white mb-5 tracking-tight">About Me</h2>
-                <article class="space-y-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-                  <p>
-                    I'm an ML Infrastructure Engineer focused on building the platform-layer systems that make machine learning workflows production-ready and scalable.
-                    At Cognitive Network Solutions, I built and maintained infrastructure for model deployment and serving — including Kubernetes-based workloads, MLflow experiment tracking and model registry, and Kafka-driven data pipelines that fed ML systems in real time.
-                  </p>
-                  <p>
-                    I worked across GCP, Azure, and AWS managing container orchestration, CI/CD pipelines for model artifacts, Terraform-provisioned infrastructure, and production observability with Prometheus and Grafana.
-                    The systems I built let data scientists ship models into production without managing deployment complexity themselves.
-                  </p>
-                  <p>
-                    Previously, I interned at Dfinitiv where I built AWS-native backend services in Python to automate media curation workflows and reduce manual processing by over 60%.
-                  </p>
-                  <p>
-                    I'm drawn to the infrastructure and platform engineering layer of ML — the reliability, scalability, and operational complexity that turns experimental models into dependable production systems.
-                  </p>
-                </article>
-            </section>
+  <p>
+    I worked across GCP, Azure, and AWS managing container orchestration, CI/CD pipelines for model artifacts, Terraform-provisioned infrastructure, and production observability with Prometheus and Grafana.
+    The systems I built let data scientists ship models into production without managing deployment complexity themselves.
+  </p>
 
-            <!-- Skills -->
-            <section id="skills" class="flex-1 glass-card p-8 transition duration-500 ease-in-out">
-                <h2 class="text-3xl font-bold text-black dark:text-white mb-5 tracking-tight">Skills</h2>
-                <div class="flex flex-wrap gap-2">
+  <p>
+    Previously, I interned at Dfinitiv where I built AWS-native backend services in Python to automate media curation workflows and reduce manual processing by over 60%.
+  </p>
 
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Go</span>
-                    <span class="skill-tag">Rust</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Bash / Shell</span>
+  <p>
+    I'm drawn to the infrastructure and platform engineering layer of ML, focusing on the reliability, scalability, and operational complexity that turns experimental models into dependable production systems.
+  </p>
+</article>
+        </section>
 
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">MLflow</span>
-                    <span class="skill-tag">LangChain / LangGraph</span>
-                    <span class="skill-tag">Hugging Face Transformers</span>
-                    <span class="skill-tag">Scikit-Learn</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">OpenAI API</span>
-                    <span class="skill-tag">Vector Databases</span>
-                    <span class="skill-tag">Embeddings / RAG Pipelines</span>
+            <!-- Skills Section -->
+<section id="skills" class="flex-1 bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 shadow-lg rounded-lg p-8 transition duration-500 ease-in-out">
+    <h2 class="text-4xl font-bold text-black dark:text-white mb-4">Skills</h2>
+    <div class="flex flex-wrap gap-4">
 
-                    <span class="skill-tag">GCP (GKE / Cloud Run / IAM)</span>
-                    <span class="skill-tag">Azure (AKS / ACR / AD)</span>
-                    <span class="skill-tag">AWS (EC2 / Lambda / S3)</span>
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">Kubernetes</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Helm</span>
-                    <span class="skill-tag">GitLab CI/CD</span>
-                    <span class="skill-tag">GitHub Actions</span>
-                    <span class="skill-tag">Cloud Networking (VPC / Ingress)</span>
-                    <span class="skill-tag">Service Accounts &amp; IAM</span>
-                    <span class="skill-tag">Monitoring (Prometheus / Grafana)</span>
-                    <span class="skill-tag">Secrets Management</span>
-                    <span class="skill-tag">Load Balancing</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Go</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Bash / Shell</span>
 
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Neo4j GraphDB</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Redis</span>
-                    <span class="skill-tag">SQLAlchemy</span>
-                    <span class="skill-tag">ETL Pipelines</span>
-                    <span class="skill-tag">Data Engineering</span>
-                    <span class="skill-tag">DuckDB</span>
-                    <span class="skill-tag">BigQuery</span>
+        <span class="skill-tag">MLflow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">Hugging Face</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
 
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">RESTful APIs</span>
-                    <span class="skill-tag">GraphQL</span>
-                    <span class="skill-tag">gRPC</span>
-                    <span class="skill-tag">Kong API Gateway</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Helm</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">GCP (GKE / Cloud Run)</span>
+        <span class="skill-tag">Azure (AKS / ACR)</span>
+        <span class="skill-tag">AWS (EC2 / Lambda / S3)</span>
+        <span class="skill-tag">GitLab CI/CD</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">Prometheus / Grafana</span>
+        <span class="skill-tag">IAM & Secrets Management</span>
 
-                    <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">RabbitMQ</span>
-                    <span class="skill-tag">Event Streaming</span>
-                    <span class="skill-tag">Distributed Systems</span>
-                    <span class="skill-tag">Serverless Architectures</span>
-                    <span class="skill-tag">Microservices</span>
-                    <span class="skill-tag">Container Orchestration</span>
+        <span class="skill-tag">Kafka</span>
+        <span class="skill-tag">Event Streaming</span>
+        <span class="skill-tag">Distributed Systems</span>
+        <span class="skill-tag">Container Orchestration</span>
 
-                    <span class="skill-tag">CI/CD Automation</span>
-                    <span class="skill-tag">Infrastructure as Code</span>
-                    <span class="skill-tag">System Observability</span>
-                    <span class="skill-tag">Automated Testing</span>
-                    <span class="skill-tag">Linting / Static Analysis</span>
-                    <span class="skill-tag">Version Control (Git)</span>
-                    <span class="skill-tag">Pipeline Optimization</span>
-                    <span class="skill-tag">Agile / Scrum</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Redis</span>
+        <span class="skill-tag">BigQuery</span>
+        <span class="skill-tag">ETL Pipelines</span>
 
-                    <span class="skill-tag">Matplotlib</span>
-                    <span class="skill-tag">Seaborn</span>
-                    <span class="skill-tag">Plotly</span>
-                    <span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">FastAPI</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">gRPC</span>
+        <span class="skill-tag">RESTful APIs</span>
 
-                    <span class="skill-tag">OAuth 2.0 / JWT</span>
-                    <span class="skill-tag">RBAC / IAM Policies</span>
-                    <span class="skill-tag">Network Security</span>
-                    <span class="skill-tag">Zero Trust / VPN</span>
-                    <span class="skill-tag">TLS / Certificate Management</span>
-
-                    <span class="skill-tag">Linux Systems</span>
-                    <span class="skill-tag">macOS / Unix CLI</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">IntelliJ / PyCharm</span>
-                    <span class="skill-tag">Jupyter Notebooks</span>
-                    <span class="skill-tag">Slack / Jira / Confluence</span>
-                </div>
-            </section>
+        <span class="skill-tag">Infrastructure as Code</span>
+        <span class="skill-tag">CI/CD Automation</span>
+        <span class="skill-tag">System Observability</span>
+        <span class="skill-tag">Linux Systems</span>
+        <span class="skill-tag">Git</span>
+    </div>
+</section>
         </div>
 
-        <!-- Projects -->
-        <section id="projects" class="glass-card p-8 transition duration-500 ease-in-out opacity-0 transform translate-y-5 transition-all duration-1000 ease-in-out" data-aos="fade-up">
-          <h2 class="text-3xl font-bold text-black dark:text-white mb-6 tracking-tight">Projects</h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<section id="projects" class="bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 shadow-lg rounded-lg p-8 transition duration-500 ease-in-out opacity-0 transform translate-y-5 transition-all duration-1000 ease-in-out" data-aos="fade-up">
+  <h2 class="text-4xl font-bold text-black dark:text-white mb-4">Projects</h2>
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">Playing Card Recognition</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/cards.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Image recognition system that identifies playing cards in real time and exposes predictions through a simple inference interface.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/playing_cards_machine_learning" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">Wildlife Recognition Model</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/turtles.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Deployed image classification model for identifying wildlife images with a clean demo interface.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/turtles_machine_learning" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+    <!-- Playing Card ML Model -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Playing Card Recognition</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/cards.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Image recognition system that identifies playing cards in real time and exposes predictions through a simple inference interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/playing_cards_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">System Metrics Pipeline</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/metrics.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Backend service that collects and exposes live CPU and memory metrics through an API and monitoring dashboard.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/system_metrics_pipeline" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+    <!-- Turtle ML Model -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Wildlife Recognition Model</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/turtles.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Deployed image classification model for identifying wildlife images with a clean demo interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/turtles_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">Travel Offers Scraper</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/offers.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Data ingestion tool that continuously collects airline promotions and exposes structured results for downstream systems.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/united_offers_scraper" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+    <!-- System Metrics Pipeline -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">System Metrics Pipeline</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/metrics.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Backend service that collects and exposes live CPU and memory metrics through an API and monitoring dashboard.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/system_metrics_pipeline" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">Stock Price Tracker</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/stocks.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Full-stack application that fetches real-time stock data and displays price changes through a simple web interface.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/stock_pipeline_project" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+    <!-- United Offers Scraper -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Travel Offers Scraper</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/offers.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Data ingestion tool that continuously collects airline promotions and exposes structured results for downstream systems.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/united_offers_scraper" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
 
-            <div class="bg-white dark:bg-gray-900 p-6 shadow-sm rounded-xl flex flex-col justify-between border border-gray-100 dark:border-gray-800" data-aos="zoom-in">
-              <div>
-                <h3 class="text-base font-bold text-black dark:text-white">Recipe Finder Web App</h3>
-                <video class="w-full h-44 object-cover mt-3 rounded-lg" autoplay loop muted playsinline>
-                  <source src="public/videos/recipe.mp4" type="video/mp4">
-                </video>
-                <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm leading-relaxed">
-                  Full-stack web app that allows users to submit ingredients and receive dynamically ranked recipes through a clean UI.
-                </p>
-              </div>
-              <a href="https://github.com/matthew-fitzgerald123/recipeWebApp" target="_blank" class="text-blue-500 hover:text-blue-600 mt-4 text-sm font-semibold inline-flex items-center gap-1">
-                View Repository <i class="fas fa-arrow-right text-xs"></i>
-              </a>
-            </div>
+    <!-- Stock Price Application -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Stock Price Tracker</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/stocks.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Full-stack application that fetches real-time stock data and displays price changes through a simple web interface.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/stock_pipeline_project" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
 
-          </div>
-        </section>
+    <!-- Recipe Web App -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">Recipe Finder Web App</h3>
+        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
+          <source src="public/videos/recipe.mp4" type="video/mp4">
+        </video>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Full-stack web app that allows users to submit ingredients and receive dynamically ranked recipes through a clean UI.
+        </p>
+      </div>
+      <a href="https://github.com/matthew-fitzgerald123/recipeWebApp" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+    </div>
+
+  </div>
+</section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="p-6 mt-6">
+    <footer class="bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 p-6">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-400 text-sm">&copy; 2026 Matthew Fitzgerald</p>
+            <p class="text-gray-700 dark:text-gray-300">&copy; 2026 Matthew Fitzgerald</p>
         </div>
     </footer>
 
+
+    <!-- AOS Library and Initialization -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
         AOS.init({
-            duration: 1000,
+            duration: 1200,
             once: true,
-            offset: 150,
+            offset: 200,
         });
 
+        // Function to show content sections when AOS animation triggers
         document.addEventListener('aos:in', ({ detail }) => {
             if (['content-sections', 'projects', 'resume', 'contact'].includes(detail.id)) {
                 detail.classList.remove('opacity-0', 'translate-y-5');
@@ -569,6 +330,7 @@
             }
         });
 
+        // Function to hide content sections when scrolling back up
         document.addEventListener('aos:out', ({ detail }) => {
             if (['content-sections', 'projects', 'resume', 'contact'].includes(detail.id)) {
                 detail.classList.add('opacity-0', 'translate-y-5');
@@ -576,16 +338,19 @@
             }
         });
 
+        // Fix scrolling issue on page refresh
         document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo(0, 0);
         });
     </script>
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        <script>
+      console.log("Dark Mode Script Ran")
+      // Check for user's system preference and set the theme
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark'); // Add 'dark' class for dark mode
+      } else {
+        document.documentElement.classList.remove('dark'); // Remove 'dark' class for light mode
+      }
     </script>
 </body>
 
