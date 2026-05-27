@@ -48,17 +48,6 @@
 
 <body class="relative transition-colors duration-500 dark:bg-dark-bg dark:text-dark-text">
 
-    <!-- Sticky nav — appears after hero scrolls out of view -->
-    <nav id="sticky-nav" class="fixed top-0 left-0 right-0 z-50 flex justify-end items-center px-6 py-3 bg-white dark:bg-black bg-opacity-90 dark:bg-opacity-80 backdrop-blur shadow-md transition-all duration-300 opacity-0 pointer-events-none">
-      <a href="https://www.linkedin.com/in/matthew-f-552048178/" target="_blank" rel="noopener noreferrer"
-         class="text-white bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-full flex items-center mr-3 transition text-sm">
-        <i class="fab fa-linkedin mr-2"></i> LinkedIn
-      </a>
-      <a href="https://github.com/matthew-fitzgerald123" target="_blank" rel="noopener noreferrer"
-         class="text-white bg-gray-800 hover:bg-gray-900 py-2 px-4 rounded-full flex items-center transition text-sm">
-        <i class="fab fa-github mr-2"></i> GitHub
-      </a>
-    </nav>
     <!-- Fixed Video Background -->
     <video id="video-background" class="fixed top-0 left-0 w-full h-full object-cover z-[-1]" autoplay loop muted playsinline>
         <source src="public/videos/hero-background.mp4" type="video/mp4">
@@ -344,19 +333,6 @@
             window.scrollTo(0, 0);
         });
 
-        // Sticky nav — show after hero scrolls out of view
-        const stickyNav = document.getElementById('sticky-nav');
-        const hero = document.getElementById('hero');
-        window.addEventListener('scroll', function () {
-            const heroBottom = hero.getBoundingClientRect().bottom;
-            if (heroBottom < 0) {
-                stickyNav.classList.remove('opacity-0', 'pointer-events-none');
-                stickyNav.classList.add('opacity-100');
-            } else {
-                stickyNav.classList.add('opacity-0', 'pointer-events-none');
-                stickyNav.classList.remove('opacity-100');
-            }
-        });
     </script>
         <script>
       console.log("Dark Mode Script Ran")
