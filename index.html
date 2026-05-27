@@ -219,88 +219,59 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <!-- Playing Card ML Model -->
+    <!-- P1: financial-sentiment-llm -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Playing Card Recognition</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/cards.mp4" type="video/mp4">
-        </video>
+        <h3 class="text-2xl font-bold text-black dark:text-white">LLM Fine-Tuning Pipeline</h3>
         <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Image recognition system that identifies playing cards in real time and exposes predictions through a simple inference interface.
+          Fine-tuned Mistral-7B on financial news with LoRA adapters, served as a streaming inference API with SSE token delivery and an automated ROUGE-L evaluation gate.
         </p>
       </div>
-      <a href="https://github.com/matthew-fitzgerald123/playing_cards_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+      <a href="https://github.com/matthew-fitzgerald123/financial-sentiment-llm" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
 
-    <!-- Turtle ML Model -->
+    <!-- P2: ml-platform -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Wildlife Recognition Model</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/turtles.mp4" type="video/mp4">
-        </video>
+        <h3 class="text-2xl font-bold text-black dark:text-white">ML Platform</h3>
         <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Deployed image classification model for identifying wildlife images with a clean demo interface.
+          Feature store and model registry backed by PostgreSQL and Redis, with scheduled feature pipelines, data quality validation, and MLflow experiment tracking.
         </p>
       </div>
-      <a href="https://github.com/matthew-fitzgerald123/turtles_machine_learning" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+      <a href="https://github.com/matthew-fitzgerald123/ml-platform" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
 
-    <!-- System Metrics Pipeline -->
+    <!-- P3: ml-drift-monitor -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">System Metrics Pipeline</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/metrics.mp4" type="video/mp4">
-        </video>
+        <h3 class="text-2xl font-bold text-black dark:text-white">ML Drift Monitor</h3>
         <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Backend service that collects and exposes live CPU and memory metrics through an API and monitoring dashboard.
+          Real-time drift detection service using ADWIN on live inference streams, with scheduled retraining, webhook alerting, and automatic model promotion via the registry.
         </p>
       </div>
-      <a href="https://github.com/matthew-fitzgerald123/system_metrics_pipeline" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+      <a href="https://github.com/matthew-fitzgerald123/ml-drift-monitor" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
 
-    <!-- United Offers Scraper -->
+    <!-- P4: rag-pipeline -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Travel Offers Scraper</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/offers.mp4" type="video/mp4">
-        </video>
+        <h3 class="text-2xl font-bold text-black dark:text-white">RAG Pipeline</h3>
         <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Data ingestion tool that continuously collects airline promotions and exposes structured results for downstream systems.
+          Hybrid retrieval pipeline combining BM25 keyword search with dense vector retrieval, cross-encoder reranking, SSE token streaming, and per-sentence citation tracking.
         </p>
       </div>
-      <a href="https://github.com/matthew-fitzgerald123/united_offers_scraper" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+      <a href="https://github.com/matthew-fitzgerald123/rag-pipeline" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
 
-    <!-- Stock Price Application -->
+    <!-- P5: llm-agent -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Stock Price Tracker</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/stocks.mp4" type="video/mp4">
-        </video>
+        <h3 class="text-2xl font-bold text-black dark:text-white">LLM Agent</h3>
         <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Full-stack application that fetches real-time stock data and displays price changes through a simple web interface.
+          ReAct-style agent with tools spanning a RAG pipeline, feature store, and drift monitor, with multi-turn conversation memory and live SSE streaming of each reasoning step.
         </p>
       </div>
-      <a href="https://github.com/matthew-fitzgerald123/stock_pipeline_project" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
-    </div>
-
-    <!-- Recipe Web App -->
-    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
-      <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">Recipe Finder Web App</h3>
-        <video class="w-full h-48 object-cover mt-4 rounded-lg shadow-md" autoplay loop muted playsinline>
-          <source src="public/videos/recipe.mp4" type="video/mp4">
-        </video>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Full-stack web app that allows users to submit ingredients and receive dynamically ranked recipes through a clean UI.
-        </p>
-      </div>
-      <a href="https://github.com/matthew-fitzgerald123/recipeWebApp" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
+      <a href="https://github.com/matthew-fitzgerald123/llm-agent" target="_blank" class="text-blue-500 hover:underline mt-4">View Repository</a>
     </div>
 
   </div>
