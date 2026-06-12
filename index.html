@@ -70,13 +70,13 @@
 
     <div class="flex justify-center mt-6 button">
       <!-- LinkedIn Button -->
-      <a href="https://www.linkedin.com/in/matthew-f-552048178/" target="_blank" rel="noopener noreferrer"
+      <a id="linkedin-btn" href="https://www.linkedin.com/in/matthew-f-552048178/" target="_blank" rel="noopener noreferrer"
          class="text-white bg-blue-600 hover:bg-blue-700 py-3 px-6 rounded-full flex items-center mr-4 transition text-base">
         <i class="fab fa-linkedin mr-2"></i> LinkedIn
       </a>
 
       <!-- GitHub Button -->
-      <a href="https://github.com/matthew-fitzgerald123" target="_blank" rel="noopener noreferrer"
+      <a id="github-btn" href="https://github.com/matthew-fitzgerald123" target="_blank" rel="noopener noreferrer"
          class="text-white bg-gray-800 hover:bg-gray-900 py-3 px-6 rounded-full flex items-center transition text-base">
         <i class="fab fa-github mr-2"></i> GitHub
       </a>
@@ -360,6 +360,43 @@
       } else {
         document.documentElement.classList.remove('dark'); // Remove 'dark' class for light mode
       }
+    </script>
+    <script>
+      function copyToClipboard(text) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).catch(function() {
+            execCopy(text);
+          });
+        } else {
+          execCopy(text);
+        }
+      }
+
+      function execCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+
+      ['linkedin-btn', 'github-btn'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        // mouseup fires before contextmenu and is a valid gesture in Safari
+        el.addEventListener('mouseup', function(e) {
+          if (e.button !== 2) return;
+          copyToClipboard(el.href);
+        });
+        el.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      });
     </script>
 </body>
 
