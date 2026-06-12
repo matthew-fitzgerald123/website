@@ -385,13 +385,28 @@
         document.body.removeChild(ta);
       }
 
+      function showCopied(el) {
+        if (el.dataset.copying) return;
+        el.dataset.copying = '1';
+        var original = el.innerHTML;
+        var originalClass = el.className;
+        el.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+        el.className = originalClass.replace(/bg-\S+/g, '') + ' bg-green-500';
+        setTimeout(function() {
+          el.style.transition = 'background-color 0.4s ease';
+          el.innerHTML = original;
+          el.className = originalClass;
+          delete el.dataset.copying;
+        }, 1500);
+      }
+
       ['linkedin-btn', 'github-btn'].forEach(function(id) {
         var el = document.getElementById(id);
         if (!el) return;
-        // mouseup fires before contextmenu and is a valid gesture in Safari
         el.addEventListener('mouseup', function(e) {
           if (e.button !== 2) return;
           copyToClipboard(el.href);
+          showCopied(el);
         });
         el.addEventListener('contextmenu', function(e) {
           e.preventDefault();
