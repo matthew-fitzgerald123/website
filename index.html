@@ -390,10 +390,13 @@
         el.dataset.copying = '1';
         var original = el.innerHTML;
         var originalClass = el.className;
+        var isDark = document.documentElement.classList.contains('dark');
+        var copiedClass = isDark
+          ? 'bg-white text-black'
+          : 'bg-gray-900 text-white';
         el.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
-        el.className = originalClass.replace(/bg-\S+/g, '') + ' bg-green-500';
+        el.className = originalClass.replace(/bg-\S+/g, '').replace(/text-\S+/g, '') + ' ' + copiedClass;
         setTimeout(function() {
-          el.style.transition = 'background-color 0.4s ease';
           el.innerHTML = original;
           el.className = originalClass;
           delete el.dataset.copying;
