@@ -389,16 +389,17 @@
         if (el.dataset.copying) return;
         el.dataset.copying = '1';
         var original = el.innerHTML;
-        var originalClass = el.className;
         var isDark = document.documentElement.classList.contains('dark');
-        var copiedClass = isDark
-          ? 'bg-white text-black'
-          : 'bg-gray-900 text-white';
+        // Inline styles instead of Tailwind classes: these always apply
+        // regardless of whether the utility was compiled into output.css,
+        // and they preserve the button's existing layout classes.
+        el.style.backgroundColor = isDark ? '#ffffff' : '#111827';
+        el.style.color = isDark ? '#000000' : '#ffffff';
         el.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
-        el.className = originalClass.replace(/bg-\S+/g, '').replace(/text-\S+/g, '') + ' ' + copiedClass;
         setTimeout(function() {
           el.innerHTML = original;
-          el.className = originalClass;
+          el.style.backgroundColor = '';
+          el.style.color = '';
           delete el.dataset.copying;
         }, 1500);
       }
