@@ -1,0 +1,5 @@
+# Claude Code local files
+.claude/
+
+# OS
+.DS_Store
