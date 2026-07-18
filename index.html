@@ -310,49 +310,7 @@
       </div>
     </div>
 
-    <!-- P2: ml-platform -->
-    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
-      <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">ML Platform</h3>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Feature store and model registry backed by PostgreSQL and Redis, with scheduled feature pipelines, data quality validation, and MLflow experiment tracking.
-        </p>
-      </div>
-      <div>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, PostgreSQL, Redis, MLflow, APScheduler, SQLAlchemy</p>
-        <a href="https://github.com/matthew-fitzgerald123/ml-platform" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-      </div>
-    </div>
-
-    <!-- P3: ml-drift-monitor -->
-    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
-      <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">ML Drift Monitor</h3>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Real-time drift detection service using ADWIN on live inference streams, with scheduled retraining, webhook alerting, and automatic model promotion via the registry.
-        </p>
-      </div>
-      <div>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, River, MLflow, APScheduler, PostgreSQL</p>
-        <a href="https://github.com/matthew-fitzgerald123/ml-drift-monitor" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-      </div>
-    </div>
-
-    <!-- P4: rag-pipeline -->
-    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
-      <div>
-        <h3 class="text-2xl font-bold text-black dark:text-white">RAG Pipeline</h3>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">
-          Hybrid retrieval pipeline combining BM25 keyword search with dense vector retrieval, cross-encoder reranking, SSE token streaming, and per-sentence citation tracking.
-        </p>
-      </div>
-      <div>
-        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, ChromaDB, BM25, sentence-transformers, mlx-lm</p>
-        <a href="https://github.com/matthew-fitzgerald123/rag-pipeline" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
-      </div>
-    </div>
-
-    <!-- P5: llm-agent -->
+    <!-- P2: llm-agent -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
         <h3 class="text-2xl font-bold text-black dark:text-white">LLM Agent</h3>
@@ -366,7 +324,63 @@
       </div>
     </div>
 
-    <!-- P6: llm-guardrails -->
+    <!-- P3: ml-data-pipeline -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">ML Data Pipeline</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          End-to-end feature engineering pipeline for financial transaction data: schema validation, windowed aggregations enforcing point-in-time correctness, a versioned offline feature store, and a FastAPI serving layer, with unit tests covering ingestion, features, store, and serving.
+        </p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, Pandera, Prefect, SQLAlchemy, PostgreSQL, Redis, pandas</p>
+        <a href="https://github.com/matthew-fitzgerald123/ml-data-pipeline" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
+      </div>
+    </div>
+
+    <!-- P4: ml-drift-monitor -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">ML Drift Monitor</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Data drift detection service using ADWIN with an automated retraining pipeline, monitoring model inputs in production and triggering retraining on distribution shift.
+        </p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, River, MLflow, APScheduler, PostgreSQL</p>
+        <a href="https://github.com/matthew-fitzgerald123/ml-drift-monitor" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
+      </div>
+    </div>
+
+    <!-- P5: ml-platform -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">ML Platform</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Feature store and model registry backed by PostgreSQL and Redis, with scheduled feature pipelines, data quality validation, and MLflow experiment tracking.
+        </p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, PostgreSQL, Redis, MLflow, APScheduler, SQLAlchemy</p>
+        <a href="https://github.com/matthew-fitzgerald123/ml-platform" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
+      </div>
+    </div>
+
+    <!-- P6: rag-pipeline -->
+    <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
+      <div>
+        <h3 class="text-2xl font-bold text-black dark:text-white">RAG Pipeline</h3>
+        <p class="text-gray-700 dark:text-gray-300 mt-4">
+          Hybrid retrieval pipeline combining BM25 keyword search with dense vector retrieval, cross-encoder reranking, SSE token streaming, and per-sentence citation tracking.
+        </p>
+      </div>
+      <div>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-6"><span class="font-semibold">Libraries Used:</span> FastAPI, ChromaDB, BM25, sentence-transformers, mlx-lm</p>
+        <a href="https://github.com/matthew-fitzgerald123/rag-pipeline" target="_blank" class="text-blue-500 hover:underline mt-4 block">View Repository</a>
+      </div>
+    </div>
+
+    <!-- P7: llm-guardrails -->
     <div class="bg-white dark:bg-gray-900 p-6 shadow-lg rounded-lg flex flex-col justify-between" data-aos="zoom-in">
       <div>
         <h3 class="text-2xl font-bold text-black dark:text-white">LLM Guardrails</h3>
